@@ -27,10 +27,8 @@ var webserver = require('kettil-webserver');
 var server = webserver.create({
     // options
     title:    'Website title',
-    secure:   false, // if https or not
-    hostname: example.org, // default: '127.0.0.1'
-    port:     80,          // default: 8080
-    // service
+    hostname: example.org,      // default: '127.0.0.1'
+    port:     80,               // default: 8080
     active: {
         session:  true,
         csrf:     true,
@@ -137,6 +135,26 @@ path-to-project/i18n                // language files
 
 ## Options
 
+* [namespace](#namespace)
+* [title](#title)
+* [domain](#domain)
+* [secure](#secure)
+* [hostname](#hostname)
+* [port](#port)
+* [poweredby](#poweredby)
+* [active](#active)
+* [path](#path)
+* [favicon](#favicon)
+* [pageNotFound and pageError](#pagenotfound-and-pageerror)
+* [staticFiles](#staticfiles)
+* [morgan](#morgan)
+* [upload](#upload)
+* [session](#session)
+  * [Mode cookie](#mode-cookie-default)
+  * [Mode memory](#mode-memory)
+  * [Mode redis](#mode-redis)
+* [language](#language)
+* [piler](#piler)
 
 
 ### `namespace`
@@ -175,7 +193,7 @@ The hostname of the website can be accessed.
 
 **default:** `process.env.NODE_HOST || '127.0.0.1'`
 
-### `hostname`
+### `port`
 
 The port of the website can be accessed.
 
@@ -242,7 +260,7 @@ pageError:    '500', // path-to-project/html/views/404.jade
 
 You can specify files that are not in the public folder, but will still be accessible.
 
-The files-object is constructed as follows: `path-in-the-browser: path-on-the-server`
+The files-object is constructed as follows: `{ path-in-the-browser: path-on-the-server }`
 
 The options are one-to-one passed at [sendfile](http://expressjs.com/4x/api.html#res.sendFile).
 
@@ -251,7 +269,7 @@ The options are one-to-one passed at [sendfile](http://expressjs.com/4x/api.html
 staticFiles:  {
     files:   {},
     options: {
-        maxAge: 31536000000 // ein Jahr
+        maxAge: 31536000000 // one year
     }
 }
 ```
@@ -280,7 +298,7 @@ With the option `active.upload`, the module can be activated.
 **default:**
 ```
 upload: {
-    dest: tools.root('path-to-project/data/upload')
+    dest: 'path-to-project/data/upload'
 }
 ```
 
