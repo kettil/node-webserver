@@ -6,12 +6,11 @@ This module is a collection of modules to set up quickly and easily a complete w
 It builds on [express4](http://expressjs.com/) and their middleware.
 
 The following properties can be enabled through the options:
-* [file upload](#file-upload)
+* [file upload](#upload)
 * [session](#session)
-* [csrf](#csrf)
-* [multiple language](#multiple-language)
-* [CSS/JS/JSX compiler](#css-js-jsx-compiler)
-
+* [csrf](#active)
+* [multiple language](#language)
+* [CSS/JS/JSX compiler](#piler)
 
 ## Install
 
@@ -150,9 +149,9 @@ path-to-project/i18n                // language files
 * [morgan](#morgan)
 * [upload](#upload)
 * [session](#session)
-  * [Mode cookie](#mode-cookie-default)
-  * [Mode memory](#mode-memory)
-  * [Mode redis](#mode-redis)
+  * [Mode: cookie](#mode-cookie-default)
+  * [Mode: memory](#mode-memory)
+  * [Mode: redis](#mode-redis)
 * [language](#language)
 * [piler](#piler)
 
@@ -311,7 +310,7 @@ With the option `active.session`, the module can be activated.
 
 If the value `session.encryptName` is true, then the cookie name is hashed
 
-#### mode: cookie [default]
+#### Mode: cookie [default]
 
 It the module [cookie-session](https://www.npmjs.com/package/cookie-session) is used for storing the data.
 The data is encrypted stored in the browser.
@@ -334,7 +333,7 @@ session: {
 }
 ```
 
-#### mode: memory
+#### Mode: memory
 
 It the module [express-session](https://www.npmjs.com/package/express-session) is used for storing the data.
 The data is stored in memory as long as the application is running.
@@ -355,7 +354,7 @@ session: {
 }
 ```
 
-#### mode: redis
+#### Mode: redis
 
 It is the modules [express-session](https://www.npmjs.com/package/express-session) and 
   [connect-redis](https://www.npmjs.com/package/connect-redis) used for storing the data.
