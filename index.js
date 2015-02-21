@@ -2,7 +2,7 @@
 var path    = require('path');
 var http    = require('http');
 var _       = require('underscore');
-var debug   = require('debug')('kd:webserver');
+var debug   = require('debug')('kettil:webserver');
 var tools   = require('kettil-tools');
 var express = require('express');
 // Special Page
