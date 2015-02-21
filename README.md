@@ -36,6 +36,7 @@ var server = webserver.create({
     // ...
 }).cssManager(function(piler, pathCss, pathBower) {
     // Add the CSS files that are compressed (by piler)
+    // Function may be called multiple times
 
     // add a file
     piler.addFile('path-to-css-file.css');
@@ -51,6 +52,7 @@ var server = webserver.create({
     // or other piler function
 }).jsManager(function(piler, pathJs, pathJsx, pathBower) {
     // Add the JS/JSX files that are compressed (by piler)
+    // Function may be called multiple times
 
     // add a file
     piler.addFile('path-to-js-file.js');
@@ -70,6 +72,7 @@ var server = webserver.create({
     // or other piler function
 }).routerManager('/', function(router) {
     // Adding routes, see Syntax in express4
+    // Function may be called multiple times
     
     router.get('/', function(req, res) {
         res.render('index', { title: 'Express' });
@@ -78,6 +81,7 @@ var server = webserver.create({
     /// ...
 }).service(function(app, server, express) {
     // Direct access to the app, server or express variable
+    // Function may be called multiple times
         
     // ...
 }).start(); // enables the web server
