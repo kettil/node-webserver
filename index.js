@@ -202,9 +202,10 @@ _.extend(Webserver.prototype, {
         this.app.use(pageError);
 
         // start webserver
+        var that = this;
         this.server.listen(this.get('port'), this.get('hostname'), function() {
-            debug('Express server listening on %s:%s', this.get('hostname'), this.get('port'));
-            if (done){
+            debug('Express server listening on %s:%s', that.get('hostname'), that.get('port'));
+            if (done) {
                 done();
             }
         });
