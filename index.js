@@ -40,7 +40,7 @@ var settings = {
         files:   {},
         options: {
             // settings for res.sendFile
-            maxAge: 365 * 24 * 60 * 60 * 1000 // ein Jahr
+            maxAge: 365 * 24 * 60 * 60 * 1000 // one Year
         }
     },
     morgan: {
